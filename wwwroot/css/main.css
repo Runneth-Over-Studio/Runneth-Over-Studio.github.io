@@ -10,18 +10,12 @@ nav {
 	border-bottom: 1px solid var(--pico-muted-border-color, #ccc)
 }
 
-/*nav li a svg {
-	width: var(--font-size);
-	height: var(--font-size);
-	color: var(--contrast)
-}*/
-
 #theme-switcher svg {
 	display: inline-block;
 	height: 1em;
 	width: auto;
 	vertical-align: middle;
-	fill: currentColor;
+	fill: currentColor
 }
 
 #logo {
