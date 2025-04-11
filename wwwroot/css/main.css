@@ -1,15 +1,27 @@
-:root {
-	--main-fg-color: #4D4D4D;
-	--main-bg-color: #FFF4E0
+html {
+	scroll-behavior: smooth
 }
 
-html, body {
-	margin: 0
+nav {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background-color: var(--pico-background-color);
+	border-bottom: 1px solid var(--pico-muted-border-color, #ccc)
 }
 
-body {
-	color: var(--main-fg-color);
-	background-color: var(--main-bg-color)
+/*nav li a svg {
+	width: var(--font-size);
+	height: var(--font-size);
+	color: var(--contrast)
+}*/
+
+#theme-switcher svg {
+	display: inline-block;
+	height: 1em;
+	width: auto;
+	vertical-align: middle;
+	fill: currentColor;
 }
 
 #logo {
