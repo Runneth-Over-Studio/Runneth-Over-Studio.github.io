@@ -9,6 +9,7 @@ if (!savedTheme || savedTheme === 'undefined') { savedTheme = default_theme; }
 document.documentElement.setAttribute('data-theme', savedTheme);
 themeSwitcher.value = savedTheme;
 themeSwitcher.innerHTML = getThemeSwitcherSVG(savedTheme);
+updateImages(savedTheme);
 
 // Change theme and save to local storage.
 themeSwitcher.addEventListener('click', (event) => {
@@ -20,6 +21,7 @@ themeSwitcher.addEventListener('click', (event) => {
     localStorage.setItem('theme', nextTheme);
     themeSwitcher.innerHTML = getThemeSwitcherSVG(nextTheme);
     themeSwitcher.blur();
+    updateImages(nextTheme);
 });
 
 // Cycle to next theme option.
@@ -32,4 +34,12 @@ function getNextTheme(currentTheme) {
 function getThemeSwitcherSVG(theme) {
     if (theme === 'dark') return moon_svg;
     else return sun_svg;
+}
+
+// Set theme specific images.
+function updateImages(theme) {
+    const logo = document.getElementById("site-logo");
+    logo.src = (theme === 'dark')
+        ? "wwwroot/images/logo-vector-horizontal-dark.svg"
+        : "wwwroot/images/logo-vector-horizontal-light.svg";
 }
