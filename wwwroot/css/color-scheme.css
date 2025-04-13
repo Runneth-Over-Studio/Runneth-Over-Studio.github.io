@@ -1,9 +1,9 @@
-/* Runneth Over Studio 
-    Color Pallet:                          https://colorhunt.co/palette/fff4e0ffbf9bb460604d4d4d
-    Gradient Palette (Light to Dark):      https://coolors.co/gradient-palette/fff4e0-4d4d4d?number=7 
-    Gradient Palette (Light to Highlight): https://coolors.co/gradient-palette/fff4e0-b46060?number=7
-    Gradient Palette (Dark to Highlight):  https://coolors.co/gradient-palette/4d4d4d-b46060?number=7 */
 :root {
+    /* Runneth Over Studio 
+        Color Pallet:                          https://colorhunt.co/palette/fff4e0ffbf9bb460604d4d4d
+        Gradient Palette (Light to Dark):      https://coolors.co/gradient-palette/fff4e0-4d4d4d?number=7 
+        Gradient Palette (Light to Highlight): https://coolors.co/gradient-palette/fff4e0-b46060?number=7
+        Gradient Palette (Dark to Highlight):  https://coolors.co/gradient-palette/4d4d4d-b46060?number=7 */
 	--light-color: #FFF4E0;
 	--dark-color: #4D4D4D;
 	--highlight-1-color: #B46060;
