@@ -28,8 +28,9 @@ nav {
 	background-color: var(--pico-background-color);
 	border-bottom: 1px solid var(--pico-muted-border-color, #ccc);
 	padding: 0.75rem 1rem;
-
-	display: flex; justify-content: space-between; align-items: center;
+	display: flex; 
+	justify-content: space-between; 
+	align-items: center
 }
 
 .nav-left, .nav-center, .nav-right {
@@ -43,7 +44,6 @@ nav {
 }
 
 .nav-right a svg {
-	height: 1em;
 	width: 1em;
 	fill: currentColor
 }
