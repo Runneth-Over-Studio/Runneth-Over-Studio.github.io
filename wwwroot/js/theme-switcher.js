@@ -40,6 +40,6 @@ function getThemeSwitcherSVG(theme) {
 function updateImages(theme) {
     const logo = document.getElementById("site-logo");
     logo.src = (theme === 'dark')
-        ? "wwwroot/images/logo-vector-horizontal-dark.svg"
-        : "wwwroot/images/logo-vector-horizontal-light.svg";
+        ? "https://runnethoverstudio.com/wwwroot//images/logo-vector-horizontal-dark.svg"
+        : "https://runnethoverstudio.com/wwwroot//images/logo-vector-horizontal-light.svg";
 }
