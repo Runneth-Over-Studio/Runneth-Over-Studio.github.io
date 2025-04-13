@@ -52,7 +52,12 @@ nav {
 	margin-left: 1em
 }
 
-.nav-right a svg {
+.nav-right svg {
 	width: 1em;
-	fill: currentColor
+	fill: currentColor;
+	transition: transform 0.6s ease-in-out
+}
+
+.nav-right a:hover svg {
+	transform: rotate(360deg);
 }
