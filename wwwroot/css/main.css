@@ -2,14 +2,6 @@ html {
 	scroll-behavior: smooth
 }
 
-#theme-switcher svg {
-	display: inline-block;
-	height: 1em;
-	width: auto;
-	vertical-align: middle;
-	fill: currentColor
-}
-
 #logo {
 	margin-top: 75px;
 	width: 35%;
@@ -24,7 +16,7 @@ footer p {
 	text-align: center
 }
 
-/********** Navigation Bar **********/
+/********** NAVIGATION BAR **********/
 nav {
 	position: sticky;
 	top: 0;
@@ -43,21 +35,43 @@ nav {
 	gap: 1rem
 }
 
-.nav-left img {
-	height: 2rem;
-	max-width: none
-}
+	/* ----- Nav bar left secion. ----- */
+	.nav-left a {
+		font-size: 0.9rem;
+		text-decoration: none;
+		transition: color 0.3s ease-in-out;
+	}
 
-.nav-right {
-	margin-left: 1em
-}
+	.nav-left a:hover {
+		color: var(--primary);
+	}
 
-.nav-right svg {
-	width: 1em;
-	fill: currentColor;
-	transition: transform 0.6s ease-in-out
-}
+	.nav-left img {
+		height: 2rem;
+		max-width: none;
+		padding-right: 1rem
+	}
 
-.nav-right a:hover svg {
-	transform: rotate(360deg);
-}
+	/* ----- Nav bar right secion. ----- */
+	.nav-right {
+		margin-left: 1em;
+		margin-top: -0.25rem
+	}
+
+	.nav-right svg {
+		width: 1em;
+		fill: currentColor;
+		transition: transform 0.6s ease-in-out
+	}
+
+	.nav-right a:hover svg {
+		transform: rotate(360deg)
+	}
+
+	#nav-theme-btn svg {
+		display: inline-block;
+		height: 1em;
+		width: auto;
+		vertical-align: middle;
+		fill: currentColor
+	}
