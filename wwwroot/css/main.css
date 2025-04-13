@@ -2,6 +2,10 @@ html {
 	scroll-behavior: smooth
 }
 
+section {
+	scroll-margin-top: 4rem;
+}
+
 #logo {
 	margin-top: 75px;
 	width: 35%;
@@ -13,7 +17,7 @@ html {
 }
 
 footer p {
-	text-align: center
+	font-size: 0.7rem
 }
 
 /********** NAVIGATION BAR **********/
