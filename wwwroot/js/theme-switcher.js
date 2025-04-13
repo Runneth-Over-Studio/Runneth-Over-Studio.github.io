@@ -38,8 +38,8 @@ function getThemeSwitcherSVG(theme) {
 
 // Set theme specific images.
 function updateImages(theme) {
-    const logo = document.getElementById("site-logo");
+    const logo = document.getElementById("nav-logo");
     logo.src = (theme === 'dark')
-        ? "https://runnethoverstudio.com/wwwroot//images/logo-vector-horizontal-dark.svg"
-        : "https://runnethoverstudio.com/wwwroot//images/logo-vector-horizontal-light.svg";
+        ? "https://runnethoverstudio.com/wwwroot/images/logo-vector-horizontal-dark.svg"
+        : "https://runnethoverstudio.com/wwwroot/images/logo-vector-horizontal-light.svg";
 }

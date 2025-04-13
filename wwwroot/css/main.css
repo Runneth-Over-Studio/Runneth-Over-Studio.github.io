@@ -44,7 +44,12 @@ nav {
 }
 
 .nav-left img {
-	height: 40px
+	height: 2rem;
+	max-width: none
+}
+
+.nav-right {
+	margin-left: 1em
 }
 
 .nav-right a svg {
