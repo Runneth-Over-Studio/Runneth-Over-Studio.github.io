@@ -20,6 +20,10 @@ html {
 	margin-right: auto
 }
 
+footer p {
+	text-align: center
+}
+
 /********** Navigation Bar **********/
 nav {
 	position: sticky;
