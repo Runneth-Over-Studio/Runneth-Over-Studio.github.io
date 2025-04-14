@@ -1,0 +1,96 @@
+.nav-section {
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem
+}
+
+.nav-section .grid {
+	grid-template-columns: 1fr 3fr
+}
+
+/* TODO: Not filling real width of the section. */
+/* .section-alt {
+	
+	background-color: var(--pico-secondary);
+} */
+
+.section-left h6 {
+	color: rgba(var(--pico-color), 0.5);
+	font-size:small
+}
+
+.section-left p {
+	font-size: 0.8rem;
+	font-weight: lighter;
+	color: rgba(var(--pico-color), 0.5)
+}
+
+.section-left p:before {
+    background: var(--pallet-accent-1-color);
+    content: "";
+    display: block;
+    width: 30px;
+    height: 5px;
+    margin-top: 1.25rem;
+	margin-bottom: 1.25rem
+}
+
+.section-right p {
+	font-size: 0.9rem
+}
+
+
+/********** ABOUT SCTION **********/
+#about-grid {
+	grid-template-columns: 2.2fr 0.8fr
+}
+
+
+/********** TOOLS SCTION **********/
+#tools-grid {
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-row-gap: 0;
+	grid-column-gap: 0
+}
+
+#tools-grid a {
+    display: block;
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff
+}
+
+#tools-grid img {
+    display: inline-block;
+    padding: 15px 25px
+}
+
+#tools-grid a:hover .tool-overlay {
+    opacity: 1
+}
+
+.tool-overlay {
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out
+}
+
+.tool-overlay span {
+    position: absolute;
+    top: 48%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    display: inline-block
+}

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" id="home">
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,16 +23,17 @@
 		<!-- Styles -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
 		<link rel="stylesheet" href="wwwroot/css/main.css">
+		<link rel="stylesheet" href="wwwroot/css/sections.css">
 		<link rel="stylesheet" href="wwwroot/css/color-scheme.css">
 	</head>
 
 	<body>
 		<nav class="container-fluid">
 			<div class="nav-left">
-				<a href="https://runnethoverstudio.com/"><img id="nav-logo" alt="Site Logo" src="wwwroot/images/logo-vector-horizontal-light.svg"></a>
+				<a href="#home"><img id="nav-logo" alt="Site Logo" src="wwwroot/images/logo-vector-horizontal-light.svg"></a>
 				<a href="#about">About</a>
+				<a href="#tools">Tools</a>
 				<a href="#features">Features</a>
-				<a href="#preview">Preview</a>
 			</div>
 			<div class="nav-right">
 				<a href="https://store.steampowered.com/developer/RunnethOverStudio" target="_blank" title="Steam"><svg id="steamSVG" viewBox="0 0 512 512"></svg></a>
@@ -44,16 +45,77 @@
 		</nav>
 
 		<main class="container">
-			<header>
-			  <h1>Welcome to My One Page Site</h1>
-			  <p class="subtitle">Built with the elegant simplicity of Pico CSS</p>
+			<header style="margin-bottom: 5em;">
+				<h1>Welcome to My One Page Site</h1>
+				<p class="subtitle">Built with the elegant simplicity of Pico CSS</p>
 			</header>
 		
-			<section id="about">
-			  <h2>About</h2>
-			  <p>This is a clean, responsive one-page layout using Pico CSS. Pico is a minimal CSS framework that doesn’t require any classes for basic elements.</p>
+			<section id="about" class="nav-section">
+				<div class="grid">
+					<div class="section-left">
+						<h6>ABOUT</h6>
+						<h2>Who I Am</h2>
+						<p>I'm Aaron Salisbury. I am an indie dev, software engineer, combat veteran, married, father of three, and a Christian.</p>
+					</div>
+					<div class="section-right grid" id="about-grid">
+						<div>
+							<p>
+								For several years I've worked in enterprise as a Principal Software Engineer.
+								I graduated from the University of Wisconsin – Stevens Point, having majored in Computer Information Systems with an emphasis on Application Development. 
+								I also minored in Web & Digital Media Development. 
+								I've received an honorable discharge from the US Army as a non-commissioned officer, having in that time conducted two overseas deployments to Iraq and Afghanistan.
+							</p>
+							<p>
+								I founded Runneth Over Studio because I felt under-served in the gaming space. 
+								Mature games that can be lots of fun tend to glorify objectionable things 
+								while contemporary Christian games seem to largely be created with an attitude of strictly needing to be suitable for Sunday school. 
+								I don't believe that either of those have to be rules. For over a millennium Christians have made some of the most enduring and evocative art. 
+								My goal is to contribute to that tradition of expression, through the exploration of themes and allegory.
+							</p>
+						</div>
+						<img id="about-image" src="wwwroot/images/people/profile-salisbury_aaron.png" alt="Aaron Salisbury" />
+					</div>
+				</div>
 			</section>
-		
+
+			<section id="tools" class="nav-section section-alt">
+				<div class="grid">
+					<div class="section-left">
+						<h6>TOOLS</h6>
+						<h2>Freely Available Professional Tooling</h2>
+						<p>Runneth Over Studio uses a suite of open source tools available to everyone, free of restrictive copyright and licensing.</p>
+					</div>
+					<div class="section-right">
+						<div class="grid" id="tools-grid">
+							<a href="https://www.linuxmint.com/">
+								<img src="wwwroot/images/tools/panel-linux-mint.png" alt="Linux Mint" />
+								<div class="tool-overlay"><span>Linux Mint</span></div>
+							</a>
+							<a href="https://krita.org/">
+								<img src="wwwroot/images/tools/panel-krita.png" alt="Krita" />
+								<div class="tool-overlay"><span>Krita</span></div>
+							</a>
+							<a href="https://inkscape.org/">
+								<img src="wwwroot/images/tools/panel-inkscape.png" alt="Inkscape" />
+								<div class="tool-overlay"><span>Inkscape</span></div>
+							</a>
+							<a href="https://www.blender.org/">
+								<img src="wwwroot/images/tools/panel-blender.png" alt="Blender" />
+								<div class="tool-overlay"><span>Blender</span></div>
+							</a>
+							<a href="https://lmms.io/">
+								<img src="wwwroot/images/tools/panel-lmms.png" alt="LMMS" />
+								<div class="tool-overlay"><span>LMMS</span></div>
+							</a>
+							<a href="https://monogame.net/">
+								<img src="wwwroot/images/tools/panel-monogame.png" alt="MonoGame" />
+								<div class="tool-overlay"><span>MonoGame</span></div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<section id="features">
 			  <h2>Features</h2>
 			  <ul>
@@ -94,7 +156,7 @@
 					</label>
 				  </fieldset>
 				</form>
-			  </section>
+			</section>
 
 			  <section id="typography">
 				<h2>Typography</h2>
