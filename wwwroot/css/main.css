@@ -47,7 +47,7 @@ nav {
 	}
 
 	.nav-left a:hover {
-		color: var(--primary);
+		color: var(--pico-contrast);
 	}
 
 	.nav-left img {
