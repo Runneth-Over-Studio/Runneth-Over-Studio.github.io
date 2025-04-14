@@ -2,10 +2,6 @@ html {
 	scroll-behavior: smooth
 }
 
-#home{
-	scroll-margin: 0px
-}
-
 section {
 	scroll-margin-top: 3.5rem /* Don't want to hide section headers with the navigation bar when we scroll to them. */
 }
