@@ -3,17 +3,7 @@ html {
 }
 
 section {
-	scroll-margin-top: 4rem;
-}
-
-#logo {
-	margin-top: 75px;
-	width: 35%;
-	min-width: 375px;
-	max-width: 750px;
-	display: block;
-	margin-left: auto;
-	margin-right: auto
+	scroll-margin-top: 4rem /* Don't want to hide section headers with the navigation bar when we scroll to them. */
 }
 
 footer p {

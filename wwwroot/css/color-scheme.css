@@ -1,11 +1,13 @@
-/* Color pallets can be found at https://colorhunt.co/palettes/ and used to build gradients at https://coolors.co/gradient-palette */
+/* Color pallets can be found at https://colorhunt.co/palettes/ and be used at https://coolors.co/gradient-palette to build gradients.
+   Pallet variables should be instantiated using rgb as they are used in the Pico scheme to build some semi-opaque colors.
+   However, --pico-text-selection-color must be set manually. For some reason using a variable to create that rgba breaks text highlighting. */
 
 :root {
     /* Runneth Over Studio color pallet: https://colorhunt.co/palette/fff4e0ffbf9bb460604d4d4d */
-    --pallet-light-color: rgba(255, 244, 224);
-    --pallet-dark-color: rgba(77, 77, 77);
-    --pallet-accent-1-color: rgba(180, 96, 96);
-    --pallet-accent-2-color: rgba(255, 191, 155);
+    --pallet-light-color: rgb(255, 244, 224);
+    --pallet-dark-color: rgb(77, 77, 77);
+    --pallet-accent-1-color: rgb(180, 96, 96);
+    --pallet-accent-2-color: rgb(255, 191, 155);
     --gradient-light-low-color: #FFF8EA;
     --gradient-light-high-color: #E1D8C8;
     --gradient-dark-low-color: #88857E;
