@@ -2,6 +2,17 @@ html {
 	scroll-behavior: smooth
 }
 
+header {
+	text-align: center;
+	margin-top: 2rem;
+	margin-bottom: 6rem
+}
+
+#header-logo {
+	max-width: 20rem;
+	margin-bottom: 1rem
+}
+
 section {
 	scroll-margin-top: 3.5rem /* Don't want to hide section headers with the navigation bar when we scroll to them. */
 }

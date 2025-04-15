@@ -26,14 +26,6 @@
 		<link rel="stylesheet" href="wwwroot/css/sections.css">
 		<link rel="stylesheet" href="wwwroot/css/color-scheme.css">
 
-		<style>
-			@media (max-width: 768px) {
-				.nav-left a[href^="#"]:not([href="#home"]) {
-					display: none;
-				}
-			}
-		</style>
-
 		<!-- Structured Data -->
 		<script type="application/ld+json">
 		{
@@ -42,7 +34,7 @@
 			"name": "Runneth Over Studio, LLC",
 			"alternateName": "Runneth Over Studio",
 			"url": "https://runnethoverstudio.com/",
-			"logo": "https://runnethoverstudio.com/wwwroot/images/logo-transparent.png",
+			"logo": "https://runnethoverstudio.com/wwwroot/images/logo.png",
 			"description": "Indie game development & software engineering.",
 			"foundingDate": "2/19/2024",
 			"sameAs": [
@@ -71,7 +63,7 @@
 				<a href="#tools">Tools</a>
 			</div>
 			<div class="nav-right">
-				<a href="https://store.steampowered.com/developer/RunnethOverStudio" target="_blank" title="Steam"><svg id="steamSVG" viewBox="0 0 512 512"></svg></a>
+				<!--<a href="https://store.steampowered.com/developer/RunnethOverStudio" target="_blank" title="Steam"><svg id="steamSVG" viewBox="0 0 512 512"></svg></a>-->
 				<a href="https://www.youtube.com/@RunnethOverStudio" target="_blank" title="YouTube"><svg id="youtubeSVG" viewBox="0 0 512 512"></svg></a>
 				<a href="https://www.twitch.tv/runnethoverstudio" target="_blank" title="Twitch"><svg id="twitchSVG" viewBox="0 0 512 512"></svg></a>
 				<a href="https://github.com/Runneth-Over-Studio" target="_blank" title="GitHub"><svg id="githubSVG" viewBox="0 0 512 512"></svg></a>
@@ -80,9 +72,10 @@
 		</nav>
 
 		<main class="container">
-			<header style="margin-bottom: 5em;">
-				<h1>Welcome to My One Page Site</h1>
-				<p class="subtitle">Built with the elegant simplicity of Pico CSS</p>
+			<header>
+				<img id="header-logo" src="wwwroot/images/logo-transparent.png" alt="Runneth Over Studio Logo">
+				<h1>Crafting Games with Purpose</h1>
+				<p class="subtitle">Runneth Over Studio blends creativity, conviction, and code to build meaningful, engaging experiences using open tools.</p>
 			</header>
 		
 			<div class="container-fluid section-alt">
@@ -96,25 +89,10 @@
 						<div class="section-right">
 							<article>
 								<header><strong>GopherWood</strong></header>
-								<p>I’m currently building a 2D game engine called <strong>GopherWood</strong>, developed using the <strong>MonoGame</strong> framework and powered by the <strong>Arch ECS</strong> (Entity Component System).</p>
+								<p>I’m currently building a 2D game engine called <strong>GopherWood</strong>, developed using the <strong>MonoGame</strong> framework and powered by <strong>Arch ECS</strong> (Entity Component System).</p>
 								<p>MonoGame offers a powerful, cross-platform base that gives full control over game behavior and rendering, while Arch ECS enables clean and high-performance data-driven architecture. This pairing provides the flexibility and modularity needed to build expressive, efficient games.</p>
 								<p>Creating GopherWood has been an incredibly gratifying process. It allows me to blend creativity and engineering into something meaningful; tailored specifically for the types of experiences I want to craft and share.</p>
 							</article>
-							<!-- Example Project Cards -->
-							<!-- <div class="grid" id="projects-grid">
-								<article>
-									<header><strong>Project Aegis</strong></header>
-									<p>An action-adventure game blending classic gameplay with rich allegory and a deeply immersive world.</p>
-								</article>
-								<article>
-									<header><strong>ScriptureVerse</strong></header>
-									<p>A tool for visualizing scripture across contexts, built with modern web tech and powered by open data.</p>
-								</article>
-								<article>
-									<header><strong>Liturgical Engine</strong></header>
-									<p>An open-source C# framework for building faith-inspired game experiences using MonoGame.</p>
-								</article> -->
-							</div>
 						</div>
 					</div>
 				</section>
@@ -186,6 +164,13 @@
 					</div>
 				</section>
 			</div>
+
+			<blockquote style="margin-top: 3.5rem;">
+				"What we want is not more little books about Christianity, but more little books by Christians on other subjects – with their Christianity latent."
+				<footer>
+				  <cite>- C.S. Lewis</cite>
+				</footer>
+			</blockquote>
 		</main>
 
 		<footer class="container">

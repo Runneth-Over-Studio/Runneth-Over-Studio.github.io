@@ -43,8 +43,16 @@ function getThemeSwitcherSVG(theme) {
 
 // Set theme specific images.
 function updateImages(theme) {
-    const logo = document.getElementById("nav-logo");
-    logo.src = (theme === 'dark')
-        ? "https://runnethoverstudio.com/wwwroot/images/logo-vector-horizontal-dark.svg"
-        : "https://runnethoverstudio.com/wwwroot/images/logo-vector-horizontal-light.svg";
+    const navLogo = document.getElementById("nav-logo");
+    const headerLogo = document.getElementById("header-logo");
+    if (theme === 'dark')
+    {
+        navLogo.src = "wwwroot/images/logo-vector-horizontal-dark.svg";
+        headerLogo.src = "wwwroot/images/logo.png";
+    }
+    else
+    {
+        navLogo.src = "wwwroot/images/logo-vector-horizontal-light.svg";
+        headerLogo.src = "wwwroot/images/logo-transparent.png";
+    }
 }
