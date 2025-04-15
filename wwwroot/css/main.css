@@ -39,12 +39,20 @@ nav {
 
 	.nav-left a:hover {
 		color: var(--pico-contrast);
+		transform: scale(1.05);
 	}
 
 	.nav-left img {
 		height: 2rem;
 		max-width: none;
 		padding-right: 1rem
+	}
+
+	/* TODO: Adjust max-width after all the sections get added. */
+	@media (max-width: 768px) {
+		.nav-left a[href^="#"]:not([href="#home"]) {
+			display: none;
+		}
 	}
 
 	/* ----- Nav bar right secion. ----- */

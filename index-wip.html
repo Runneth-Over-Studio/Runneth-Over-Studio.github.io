@@ -12,7 +12,7 @@
 		<!-- Open Graph -->
 		<meta property="og:title" content="Runneth Over Studio" />
 		<meta property="og:description" content="Official website of Runneth Over Studio, LLC. Indie game development & software engineering." />
-		<meta property="og:image" content="wwwroot/images/og-site.jpg" />
+		<meta property="og:image" content="https://runnethoverstudio.com/wwwroot/images/og-site.jpg" />
 		<meta property="og:url" content="https://runnethoverstudio.com/" />
 		<meta property="og:type" content="website" />
 
@@ -25,6 +25,41 @@
 		<link rel="stylesheet" href="wwwroot/css/main.css">
 		<link rel="stylesheet" href="wwwroot/css/sections.css">
 		<link rel="stylesheet" href="wwwroot/css/color-scheme.css">
+
+		<style>
+			@media (max-width: 768px) {
+				.nav-left a[href^="#"]:not([href="#home"]) {
+					display: none;
+				}
+			}
+		</style>
+		
+		<!-- Structured Data -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Runneth Over Studio, LLC",
+			"alternateName": "Runneth Over Studio",
+			"url": "https://runnethoverstudio.com/",
+			"logo": "https://runnethoverstudio.com/wwwroot/images/logo-transparent.png",
+			"description": "Indie game development & software engineering.",
+			"foundingDate": "2/19/2024",
+			"sameAs": [
+				"https://store.steampowered.com/developer/RunnethOverStudio",
+				"https://www.youtube.com/@RunnethOverStudio",
+				"https://www.twitch.tv/runnethoverstudio",
+				"https://github.com/Runneth-Over-Studio"],
+			"founder": {
+				"@type": "Person",
+				"name": "Aaron Salisbury"
+			},
+			"address": {
+				"@type": "PostalAddress",
+				"addressCountry": "US"
+			}
+		}
+		</script>
 	</head>
 
 	<body>
@@ -115,27 +150,27 @@
 						<div class="section-right">
 							<div class="grid" id="tools-grid">
 								<a href="https://www.linuxmint.com/">
-									<img src="wwwroot/images/tools/panel-linux-mint.png" alt="Linux Mint" />
+									<img src="wwwroot/images/tools/panel-linux-mint.png" alt="Linux Mint" loading="lazy" />
 									<div class="tool-overlay"><span>Linux Mint</span></div>
 								</a>
 								<a href="https://krita.org/">
-									<img src="wwwroot/images/tools/panel-krita.png" alt="Krita" />
+									<img src="wwwroot/images/tools/panel-krita.png" alt="Krita" loading="lazy" />
 									<div class="tool-overlay"><span>Krita</span></div>
 								</a>
 								<a href="https://inkscape.org/">
-									<img src="wwwroot/images/tools/panel-inkscape.png" alt="Inkscape" />
+									<img src="wwwroot/images/tools/panel-inkscape.png" alt="Inkscape" loading="lazy" />
 									<div class="tool-overlay"><span>Inkscape</span></div>
 								</a>
 								<a href="https://www.blender.org/">
-									<img src="wwwroot/images/tools/panel-blender.png" alt="Blender" />
+									<img src="wwwroot/images/tools/panel-blender.png" alt="Blender" loading="lazy" />
 									<div class="tool-overlay"><span>Blender</span></div>
 								</a>
 								<a href="https://lmms.io/">
-									<img src="wwwroot/images/tools/panel-lmms.png" alt="LMMS" />
+									<img src="wwwroot/images/tools/panel-lmms.png" alt="LMMS" loading="lazy" />
 									<div class="tool-overlay"><span>LMMS</span></div>
 								</a>
 								<a href="https://monogame.net/">
-									<img src="wwwroot/images/tools/panel-monogame.png" alt="MonoGame" />
+									<img src="wwwroot/images/tools/panel-monogame.png" alt="MonoGame" loading="lazy" />
 									<div class="tool-overlay"><span>MonoGame</span></div>
 								</a>
 							</div>
