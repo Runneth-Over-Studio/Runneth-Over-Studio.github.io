@@ -1,4 +1,4 @@
-// "nav-theme-btn" in an anchor element that the user can click to flip Pico CSS's theme between light and dark.
+// "nav-theme-btn" is an anchor element that the user can click to flip Pico CSS's theme between light and dark.
 // On top of setting the Pico theme, we want to store their preference, update the visual cue of the anchor, and flip any theme specific images.
 
 document.addEventListener('DOMContentLoaded', function() {
