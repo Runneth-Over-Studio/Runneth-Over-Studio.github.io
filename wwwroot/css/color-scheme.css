@@ -9,8 +9,10 @@
     --pallet-accent-1-color: rgb(180, 96, 96);
     --pallet-accent-2-color: rgb(255, 191, 155);
     --gradient-light-low-color: #FFF8EA;
+    --gradient-light-mid-color: #FFFAF0;
     --gradient-light-high-color: #E1D8C8;
     --gradient-dark-low-color: #88857E;
+    --gradient-dark-mid-color: #404040;
     --gradient-dark-high-color: #333333;
     --gradient-highlight-1-low-color: #C17975;
     --gradient-highlight-1-high-color: #925A5A;
@@ -113,7 +115,7 @@
     --pico-dropdown-border-color: #eff1f4;
     --pico-dropdown-box-shadow: var(--pico-box-shadow);
     --pico-dropdown-color: var(--pico-color);
-    --pico-dropdown-hover-background-color: #eff1f4;
+    --pico-dropdown-hover-background-color: var(--gradient-light-mid-color);
     --pico-loading-spinner-opacity: 0.5;
     --pico-modal-overlay-background-color: rgba(232, 234, 237, 0.75);
     --pico-progress-background-color: #dfe3eb;
@@ -224,7 +226,7 @@
         --pico-dropdown-border-color: #202632;
         --pico-dropdown-box-shadow: var(--pico-box-shadow);
         --pico-dropdown-color: var(--pico-color);
-        --pico-dropdown-hover-background-color: #202632;
+        --pico-dropdown-hover-background-color: var(--gradient-dark-mid-color);
         --pico-loading-spinner-opacity: 0.5;
         --pico-modal-overlay-background-color: rgba(7.5, 8.5, 10, 0.75);
         --pico-progress-background-color: var(--gradient-dark-low-color);
@@ -339,7 +341,7 @@
     --pico-dropdown-border-color: #202632;
     --pico-dropdown-box-shadow: var(--pico-box-shadow);
     --pico-dropdown-color: var(--pico-color);
-    --pico-dropdown-hover-background-color: #202632;
+    --pico-dropdown-hover-background-color: var(--gradient-dark-mid-color);
     --pico-loading-spinner-opacity: 0.5;
     --pico-modal-overlay-background-color: rgba(7.5, 8.5, 10, 0.75);
     --pico-progress-background-color: var(--gradient-dark-low-color);

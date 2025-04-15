@@ -7,11 +7,15 @@
 	grid-template-columns: 1fr 3fr
 }
 
-/* TODO: Not filling real width of the section. */
-/* .section-alt {
-	
-	background-color: var(--pico-secondary);
-} */
+.section-alt {
+    background-color: var(--pico-dropdown-hover-background-color);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw
+}
 
 .section-left h6 {
 	color: rgba(var(--pico-color), 0.5);
