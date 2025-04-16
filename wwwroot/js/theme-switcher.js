@@ -48,11 +48,11 @@ function updateImages(theme) {
     if (theme === 'dark')
     {
         navLogo.src = "wwwroot/images/logo-vector-horizontal-dark.svg";
-        headerLogo.src = "wwwroot/images/logo.png";
+        headerLogo.src = "wwwroot/images/logo-transparent-dark.png";
     }
     else
     {
         navLogo.src = "wwwroot/images/logo-vector-horizontal-light.svg";
-        headerLogo.src = "wwwroot/images/logo-transparent.png";
+        headerLogo.src = "wwwroot/images/logo-transparent-light.png";
     }
 }
