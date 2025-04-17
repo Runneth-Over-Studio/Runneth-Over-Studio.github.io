@@ -21,8 +21,13 @@ section {
 	scroll-margin-top: 3.5rem /* Don't want to hide section headers with the navigation bar when we scroll to them. */
 }
 
+article {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1)
+}
+
 footer p {
-	font-size: 0.7rem
+	font-size: 0.7rem;
+	opacity: 0.7
 }
 
 

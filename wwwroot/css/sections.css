@@ -1,9 +1,9 @@
-.nav-section {
+section {
 	padding-top: 2.5rem;
 	padding-bottom: 2.5rem
 }
 
-.nav-section .grid {
+.standard-section .grid {
 	grid-template-columns: 1fr 3fr
 }
 
