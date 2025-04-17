@@ -82,14 +82,14 @@ nav {
 		margin-top: -0.25rem
 	}
 
-	.nav-right svg {
+	.nav-right img {
 		width: 1em;
-		fill: currentColor;
 		transition: transform 0.6s ease-in-out
 	}
 
-	.nav-right a:hover svg {
-		transform: rotate(360deg)
+	.nav-right a:hover img {
+		transform: rotate(360deg);
+		opacity: 0.7
 	}
 
 	#nav-theme-btn svg {
@@ -98,4 +98,14 @@ nav {
 		width: auto;
 		vertical-align: middle;
 		fill: currentColor
+	}
+
+	/* TODO: Right now the theme button is styled to look and act like the social icons, however I'd like to replace it with a dedicated control. Similar to what's on the MonoGame website. https://monogame.net/ */
+	.nav-right svg {
+		width: 1em;
+		fill: var(--pallet-accent-1-color);
+		transition: transform 0.6s ease-in-out
+	}
+	.nav-right a:hover svg {
+		transform: rotate(360deg)
 	}
