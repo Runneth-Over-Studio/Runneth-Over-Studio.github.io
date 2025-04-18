@@ -56,6 +56,12 @@ section {
 	grid-row-gap: 0;
 	grid-column-gap: 0
 }
+    @media (max-width: 1024px) {
+        #tools-grid {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr
+        }
+    }
 
 #tools-grid a {
     display: block;

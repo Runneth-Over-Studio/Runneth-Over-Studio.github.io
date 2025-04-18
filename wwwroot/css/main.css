@@ -1,3 +1,5 @@
+/* Note - Pico media jumps: 576px, 768px, 1024px, 1280px, 1536px */
+
 html {
 	scroll-behavior: smooth
 }
