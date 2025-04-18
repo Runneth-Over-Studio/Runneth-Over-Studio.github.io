@@ -3,28 +3,29 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     const themeSwitcher = document.getElementById('nav-theme-btn');
-    const default_theme ='dark';
+
+    // Set theme to what's been saved, else the default.
+    document.documentElement.setAttribute('data-theme', getCurrentTheme());
     
-    // Load saved theme from local storage.
-    let savedTheme = localStorage.getItem('theme');
-    if (!savedTheme || savedTheme === 'undefined') { savedTheme = default_theme; }
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    themeSwitcher.value = savedTheme;
-    
-    // Change theme and save to local storage.
+    // Upon theme button click, change theme and save new selection.
     themeSwitcher.addEventListener('click', (event) => {
         event.preventDefault();
-        let currentTheme = localStorage.getItem('theme');
-        if (!currentTheme || currentTheme === 'undefined') { currentTheme = default_theme; }
-        const nextTheme = getNextTheme(currentTheme);
+        let currentTheme = getCurrentTheme();
+        let nextTheme = currentTheme === 'light' ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', nextTheme);
         localStorage.setItem('theme', nextTheme);
         themeSwitcher.blur();
     });
 }, false);
 
-// Cycle to next theme option.
-function getNextTheme(currentTheme) {
-    if (currentTheme === 'dark') return 'light';
-    else return 'dark';
+// Return the current theme from local storage or default to dark if not set.
+function getCurrentTheme() {
+    const default_theme ='dark';
+    let savedTheme = localStorage.getItem('theme');
+    if (!savedTheme || savedTheme === 'undefined')
+    { 
+        savedTheme = default_theme;
+        localStorage.setItem('theme', savedTheme);
+    }
+    return savedTheme;
 }
