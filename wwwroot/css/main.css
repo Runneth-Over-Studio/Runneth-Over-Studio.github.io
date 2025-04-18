@@ -6,6 +6,14 @@ body {
 	background-repeat: repeat
 }
 
+[data-theme=light] body {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFF4E0' fill-opacity='0.5' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+[data-theme=dark] body {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%234D4D4D' fill-opacity='0.2' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
 header {
 	text-align: center;
 	margin-top: 2rem;
@@ -15,6 +23,14 @@ header {
 #header-logo {
 	max-width: 20rem;
 	margin-bottom: 1rem
+}
+
+[data-theme=light] #header-logo {
+	content: url("../images/logo-transparent-light.png");
+}
+
+[data-theme=dark] #header-logo {
+	content: url("../images/logo-transparent-dark.png");
 }
 
 section {
@@ -63,10 +79,18 @@ nav {
 		transform: scale(1.05);
 	}
 
-	.nav-left img {
+	#nav-logo {
 		height: 2rem;
 		max-width: none;
 		padding-right: 1rem
+	}
+
+	[data-theme=light] #nav-logo {
+		content: url("../images/logo-vector-horizontal-light.png");
+	}
+	
+	[data-theme=dark] #nav-logo {
+		content: url("../images/logo-vector-horizontal-dark.png");
 	}
 
 	/* TODO: Adjust max-width after all the sections get added. */
@@ -94,20 +118,12 @@ nav {
 	}
 
 	#nav-theme-btn svg {
-		display: inline-block;
-		height: 1em;
-		width: auto;
-		vertical-align: middle;
-		fill: currentColor
-	}
-
-	/* TODO: Right now the theme button is styled to look and act like the social icons, however I'd like to replace it with a dedicated control. Similar to what's on the MonoGame website. https://monogame.net/ */
-	.nav-right svg {
-		width: 1em;
 		fill: var(--pallet-accent-1-color);
+		width: 1em;
 		transition: transform 0.6s ease-in-out 0s;
 		transition-duration: 0.6s !important
 	}
-	.nav-right a:hover svg {
+
+	.nav-right #nav-theme-btn:hover svg {
 		transform: rotate(360deg)
 	}

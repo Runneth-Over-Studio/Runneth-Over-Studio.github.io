@@ -1,5 +1,5 @@
 // "nav-theme-btn" is an anchor element that the user can click to flip Pico CSS's theme between light and dark.
-// On top of setting the Pico theme, we want to store their preference, update the visual cue of the anchor, and flip any theme specific images.
+// On top of setting the Pico theme, we want to store their preference and update the visual cue of the anchor.
 
 document.addEventListener('DOMContentLoaded', function() {
     const themeSwitcher = document.getElementById('nav-theme-btn');
@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.documentElement.setAttribute('data-theme', savedTheme);
     themeSwitcher.value = savedTheme;
     themeSwitcher.innerHTML = getThemeSwitcherSVG(savedTheme);
-    updateImages(savedTheme);
     
     // Change theme and save to local storage.
     themeSwitcher.addEventListener('click', (event) => {
@@ -23,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('theme', nextTheme);
         themeSwitcher.innerHTML = getThemeSwitcherSVG(nextTheme);
         themeSwitcher.blur();
-        updateImages(nextTheme);
     });
 }, false);
 
@@ -39,22 +37,4 @@ function getThemeSwitcherSVG(theme) {
     const moon_svg = '<svg viewBox="0 0 512 512"><g fill="currentColor"><path d="M 253.14285714285714 40 Q 218.85714285714286 72 200.57142857142858 116.57142857142857 L 200.57142857142858 116.57142857142857 L 200.57142857142858 116.57142857142857 Q 181.14285714285714 160 181.14285714285714 210.28571428571428 Q 183.42857142857142 306.2857142857143 244 371.42857142857144 Q 304.57142857142856 437.7142857142857 398.2857142857143 446.85714285714283 Q 349.14285714285717 474.2857142857143 290.85714285714283 475.42857142857144 Q 197.14285714285714 473.14285714285717 135.42857142857142 411.42857142857144 Q 73.71428571428571 349.7142857142857 71.42857142857143 256 Q 72.57142857142857 172.57142857142858 124 114.28571428571429 Q 174.28571428571428 54.857142857142854 253.14285714285714 40 L 253.14285714285714 40 Z M 328.57142857142856 14.857142857142858 Q 325.14285714285717 2.2857142857142856 311.42857142857144 1.1428571428571428 Q 301.14285714285717 0 289.7142857142857 0 Q 218.85714285714286 1.1428571428571428 161.71428571428572 35.42857142857143 Q 103.42857142857143 68.57142857142857 69.14285714285714 126.85714285714286 Q 36 184 34.857142857142854 256 Q 36 328 70.28571428571429 385.14285714285717 Q 103.42857142857143 443.42857142857144 161.71428571428572 476.57142857142856 Q 218.85714285714286 510.85714285714283 290.85714285714283 512 Q 397.14285714285717 509.7142857142857 468 440 Q 477.14285714285717 429.7142857142857 471.42857142857144 418.2857142857143 Q 465.7142857142857 406.85714285714283 452 408 Q 436 411.42857142857144 417.7142857142857 411.42857142857144 Q 333.14285714285717 409.14285714285717 276 352 Q 220 296 217.71428571428572 210.28571428571428 Q 217.71428571428572 153.14285714285714 245.14285714285714 107.42857142857143 Q 273.7142857142857 61.714285714285715 319.42857142857144 35.42857142857143 Q 330.85714285714283 28.571428571428573 328.57142857142856 14.857142857142858 L 328.57142857142856 14.857142857142858 Z" /></g></svg>';
     if (theme === 'dark') return moon_svg;
     else return sun_svg;
-}
-
-// Set theme specific images.
-function updateImages(theme) {
-    const navLogo = document.getElementById("nav-logo");
-    const headerLogo = document.getElementById("header-logo");
-    if (theme === 'dark')
-    {
-        navLogo.src = "wwwroot/images/logo-vector-horizontal-dark.png";
-        headerLogo.src = "wwwroot/images/logo-transparent-dark.png";
-        document.body.style.backgroundImage = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%234D4D4D' fill-opacity='0.2' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"; 
-    }
-    else
-    {
-        navLogo.src = "wwwroot/images/logo-vector-horizontal-light.png";
-        headerLogo.src = "wwwroot/images/logo-transparent-light.png";
-        document.body.style.backgroundImage = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFF4E0' fill-opacity='0.5' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"; 
-    }
 }
