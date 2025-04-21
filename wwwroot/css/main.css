@@ -95,13 +95,6 @@ nav {
 		content: url("../images/logo-vector-horizontal-dark.png")
 	}
 
-	/* TODO: Adjust max-width after all the sections get added. */
-	@media (max-width: 768px) {
-		.nav-left a[href^="#"]:not([href="#home"]) {
-			display: none;
-		}
-	}
-
 	/* ----- Nav bar right secion. ----- */
 	.nav-right {
 		margin-left: 1em;
