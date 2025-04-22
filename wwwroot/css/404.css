@@ -6,13 +6,6 @@ html, body {
     min-height: 100%
 }
 
-@media (max-width: 768px) {
-    /* Don't display section navigation links when screen is narrow. */
-    .nav-left a[href^="./index.html#"]:not([href="./index.html#home"]) {
-        display: none;
-    }
-}
-
 
 /***** ref https://codepen.io/AlexKP/pen/wqEKWQ *****/
 
