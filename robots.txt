@@ -1,0 +1,5 @@
+# robots.txt for https://runnethoverstudio.com/
+# Allow all bots to crawl everything
+
+User-agent: *
+Disallow:
