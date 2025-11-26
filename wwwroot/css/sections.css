@@ -10,6 +10,11 @@ section {
 	padding-bottom: 2.5rem
 }
 
+.standard-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem
+}
+
 .standard-section .grid {
 	grid-template-columns: 1fr 3fr
 }
@@ -21,13 +26,20 @@ section {
     }
 
 .section-alt {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    position: relative;
+    clip-path: polygon(
+    /* TOP edge – jagged, sloping DOWN to the right */
+    0%   0%, 8%   1.8%, 16%  0.8%, 25%  2.5%, 33%  1.2%, 42%  3.4%, 50%  2.1%, 58%  4.6%, 66%  3.0%, 75%  5.1%, 83%  4.0%, 91%  6.2%, 100% 6.0%,
+    /* BOTTOM edge – jagged, sloping UP to the right */
+    100% 93%, 91%  95.5%, 83%  94.0%, 75%  97.0%, 66%  95.0%, 58%  98.2%, 50%  96.4%, 42%  98.8%, 33%  97.2%, 25%  99.4%, 16%  98.0%, 8%   100%, 0%   100%
+    );
     background: linear-gradient(
         to bottom,
         var(--pico-dropdown-hover-background-color) 0%,
-        color-mix(in srgb, var(--pico-dropdown-hover-background-color), black 16%) 100%
-    );
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem
+        color-mix(in srgb, var(--pico-dropdown-hover-background-color), black 15%) 100%
+    )
 }
 
 .section-left h6 {
