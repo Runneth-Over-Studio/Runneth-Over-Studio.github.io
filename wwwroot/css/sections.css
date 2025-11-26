@@ -14,7 +14,11 @@ section {
     }
 
 .section-alt {
-    background-color: var(--pico-dropdown-hover-background-color);
+    background: linear-gradient(
+        to bottom,
+        var(--pico-dropdown-hover-background-color) 0%,
+        color-mix(in srgb, var(--pico-dropdown-hover-background-color), black 12%) 100%
+    );
     width: 100vw;
     position: relative;
     left: 50%;
@@ -48,12 +52,10 @@ section {
 	font-size: 0.9rem
 }
 
-
 /********** ABOUT SCTION **********/
 #about-grid {
 	grid-template-columns: 2.2fr 0.8fr
 }
-
 
 /********** TOOLS SCTION **********/
 #tools-grid {
