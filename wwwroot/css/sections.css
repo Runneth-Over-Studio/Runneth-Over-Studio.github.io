@@ -24,7 +24,7 @@ section {
     background: linear-gradient(
         to bottom,
         var(--pico-dropdown-hover-background-color) 0%,
-        color-mix(in srgb, var(--pico-dropdown-hover-background-color), black 12%) 100%
+        color-mix(in srgb, var(--pico-dropdown-hover-background-color), black 16%) 100%
     );
     padding-top: 2.5rem;
     padding-bottom: 2.5rem
