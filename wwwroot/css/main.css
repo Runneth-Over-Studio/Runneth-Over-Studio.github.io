@@ -48,7 +48,6 @@ footer p {
 	opacity: 0.7
 }
 
-
 /********** NAVIGATION BAR **********/
 nav {
 	position: sticky;
@@ -122,3 +121,11 @@ nav {
 		width: auto
 	}
 	
+	/********** FOOTER **********/
+	#blockquote {
+		padding-bottom: 0
+	}
+
+	footer {
+		padding-top: 0
+	}

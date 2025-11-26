@@ -26,12 +26,8 @@ section {
         var(--pico-dropdown-hover-background-color) 0%,
         color-mix(in srgb, var(--pico-dropdown-hover-background-color), black 12%) 100%
     );
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem
 }
 
 .section-left h6 {
