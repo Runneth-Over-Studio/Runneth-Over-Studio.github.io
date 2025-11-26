@@ -1,3 +1,10 @@
+@media (max-width: 768px) {
+    /* Don't display section navigation links when screen is narrow. */
+    .nav-left a[href^="#"]:not([href="#home"]) {
+        display: none;
+    }
+}
+
 section {
 	padding-top: 2.5rem;
 	padding-bottom: 2.5rem
@@ -51,6 +58,11 @@ section {
 .section-right p {
 	font-size: 0.9rem
 }
+
+article > header :is(h1, h2, h3, h4, h5, h6) {
+    margin-bottom: 0
+}
+
 
 /********** ABOUT SCTION **********/
 #about-grid {
