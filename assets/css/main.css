@@ -28,11 +28,11 @@ header {
 }
 
 [data-theme=light] #header-logo {
-	content: url("../images/logo-transparent-light.png")
+	content: url("../img/logo-transparent-light.png")
 }
 
 [data-theme=dark] #header-logo {
-	content: url("../images/logo-transparent-dark.png")
+	content: url("../img/logo-transparent-dark.png")
 }
 
 section {
@@ -87,11 +87,11 @@ nav {
 	}
 
 	[data-theme=light] #nav-logo {
-		content: url("../images/logo-vector-horizontal-light.png")
+		content: url("../img/logo-vector-horizontal-light.png")
 	}
 	
 	[data-theme=dark] #nav-logo {
-		content: url("../images/logo-vector-horizontal-dark.png")
+		content: url("../img/logo-vector-horizontal-dark.png")
 	}
 
 	/* ----- Nav bar right secion. ----- */
@@ -112,11 +112,11 @@ nav {
 	}
 
 	[data-theme=light] #nav-theme-img {
-		content: url("../images/theme-switcher/theme-icon-light.png")
+		content: url("../img/theme-switcher/theme-icon-light.png")
 	}
 	
 	[data-theme=dark] #nav-theme-img {
-		content: url("../images/theme-switcher/theme-icon-dark.png");
+		content: url("../img/theme-switcher/theme-icon-dark.png");
 		max-height: 1em;
 		width: auto
 	}
