@@ -161,7 +161,7 @@
         return;
       }
 
-      const rawLinkHtml = `<a href="${src}">view raw Markdown</a>`;
+      const rawLinkHtml = `<a href="${src}">View Raw Markdown</a>`;
 
       renderStatus(statusEl, `Loading…`);
 
