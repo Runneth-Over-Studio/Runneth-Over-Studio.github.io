@@ -47,13 +47,18 @@
       </hgroup>
 
       <article>
-        <div id="status" class="muted">Loading privacy policy…</div>
-        <div id="content"></div>
+        <div id="md-status" class="muted">Loading…</div>
+        <div id="md-content"
+          data-md-src="/assets/docs/privacy.md"
+          data-md-status="#md-status"
+          data-md-anchors="true"
+          data-md-external-links="true">
+        </div>
 
         <footer class="muted" style="margin-top: 1rem;">
           <small>
             Trouble viewing this page? View the raw policy:
-            <a href="../assets/docs/privacy.md">privacy.md</a>
+            <a href="/assets/docs/privacy.md">privacy.md</a>
           </small>
         </footer>
       </article>
@@ -63,7 +68,7 @@
       <main class="container">
         <article>
           <strong>This page requires JavaScript to render the policy content.</strong>
-          <p>Open the raw Markdown: <a href="../assets/docs/privacy.md">privacy.md</a></p>
+          <p>Open the raw Markdown: <a href="/assets/docs/privacy.md">privacy.md</a></p>
         </article>
       </main>
     </noscript>
@@ -75,68 +80,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js" crossorigin="anonymous"></script>
-
-    <script>
-      async function renderPrivacyPolicy() {
-        const statusEl = document.getElementById("status");
-        const contentEl = document.getElementById("content");
-
-        // If scripts failed to load, show a clear message.
-        if (typeof marked === "undefined" || typeof DOMPurify === "undefined") {
-          statusEl.innerHTML =
-            `<strong>Renderer failed to load.</strong> ` +
-            `Try opening the raw Markdown: <a href="../assets/docs/privacy.md">privacy.md</a>`;
-          return;
-        }
-
-        // Basic Marked config
-        marked.setOptions({
-          gfm: true,
-          breaks: false,
-          headerIds: true,
-          mangle: false
-        });
-
-        try {
-          const response = await fetch("../assets/docs/privacy.md", { cache: "no-store" });
-          if (!response.ok) {
-            throw new Error(`Failed to load privacy.md (${response.status} ${response.statusText})`);
-          }
-
-          const markdown = await response.text();
-
-          // Convert Markdown -> HTML
-          const rawHtml = marked.parse(markdown);
-
-          // Sanitize
-          const cleanHtml = DOMPurify.sanitize(rawHtml, {
-            USE_PROFILES: { html: true }
-          });
-
-          contentEl.innerHTML = cleanHtml;
-          statusEl.textContent = ""; // clear loading text
-
-          // External links: open in new tab
-          contentEl.querySelectorAll("a[href]").forEach(a => {
-            const href = a.getAttribute("href") || "";
-            const isExternal = href.startsWith("http://") || href.startsWith("https://");
-            if (isExternal) {
-              a.target = "_blank";
-              a.rel = "noopener noreferrer";
-            }
-          });
-        }
-        catch (err) {
-          statusEl.innerHTML =
-            `<strong>Could not load the Privacy Policy.</strong> ` +
-            `<span class="muted">${String(err)}</span>`;
-          contentEl.innerHTML =
-            `<p>Open the raw Markdown directly: <a href="../assets/docs/privacy.md">privacy.md</a></p>`;
-        }
-      }
-
-      renderPrivacyPolicy();
-    </script>
+    <script src="../assets/js/markdown-renderer.js" defer></script>
+    <script defer>window.MarkdownPageRenderer.render("#md-content");</script>
 
 	</body>
 </html>
