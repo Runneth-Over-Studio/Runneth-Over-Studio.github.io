@@ -1,16 +1,8 @@
-html { 
-    height: 100%
-}
-
-html, body { 
-    min-height: 100%
-}
-
 
 /***** ref https://codepen.io/AlexKP/pen/wqEKWQ *****/
 
 header {
-    
+
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -27,7 +19,7 @@ header {
     border: 1px solid white;
     color: white;
     width: 92%;
-    max-width: 400px
+    max-width: 400px;
 }
 
 .glitch-container .title {

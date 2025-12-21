@@ -1,131 +1,148 @@
 /* Note - Pico media jumps: 576px, 768px, 1024px, 1280px, 1536px */
 
 html {
-	scroll-behavior: smooth
+	scroll-behavior: smooth;
 }
 
 body {
-	background-repeat: repeat
+	min-height: 100vh;  /* fallback */
+  min-height: 100dvh; /* modern mobile-safe */
+  display: flex;
+  flex-direction: column;
+	background-repeat: repeat;
 }
 
-[data-theme=light] body {
+main {
+  flex: 1;
+}
+
+[data-theme="light"] body {
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFF4E0' fill-opacity='0.5' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-[data-theme=dark] body {
+[data-theme="dark"] body {
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%234D4D4D' fill-opacity='0.2' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 header {
 	text-align: center;
 	margin-top: 2rem;
-	margin-bottom: 6rem
+	margin-bottom: 6rem;
 }
 
 #header-logo {
 	max-width: 20rem;
-	margin-bottom: 1rem
+	margin-bottom: 1rem;
 }
 
-[data-theme=light] #header-logo {
-	content: url("../img/logo-transparent-light.png")
+[data-theme="light"] #header-logo {
+	content: url("../img/logo-transparent-light.png");
 }
 
-[data-theme=dark] #header-logo {
-	content: url("../img/logo-transparent-dark.png")
+[data-theme="dark"] #header-logo {
+	content: url("../img/logo-transparent-dark.png");
 }
 
 section {
-	scroll-margin-top: 2.5rem /* Don't want to hide section headers with the navigation bar when we scroll to them. */
+	scroll-margin-top: 2.5rem; /* Don't want to hide section headers with the navigation bar when we scroll to them. */
 }
 
 article {
-	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1)
-}
-
-footer p {
-	font-size: 0.7rem;
-	opacity: 0.7
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 /********** NAVIGATION BAR **********/
-nav {
+#site-nav {
 	position: sticky;
 	top: 0;
 	z-index: 1000;
 	background-color: var(--pico-secondary);
 	border-bottom: 1px solid var(--pico-muted-border-color, #ccc);
-	display: flex; 
-	justify-content: space-between; 
+	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	padding-top: 0.4rem;
-	padding-bottom: 0.4rem
+	padding-bottom: 0.4rem;
 }
 
 .nav-left, .nav-center, .nav-right {
 	display: flex;
 	align-items: center;
-	gap: 1rem
+	gap: 1rem;
 }
 
-	/* ----- Nav bar left secion. ----- */
-	.nav-left a {
-		font-size: 0.9rem;
-		text-decoration: none;
-		transition: color 0.3s ease-in-out
-	}
+/* ----- Nav bar left secion. ----- */
+.nav-left a {
+	font-size: 0.9rem;
+	text-decoration: none;
+	transition: color 0.3s ease-in-out, transform 0.15s ease-in-out;
+}
 
-	.nav-left a:hover {
-		color: var(--pico-contrast);
-		transform: scale(1.05)
-	}
+.nav-left a:hover {
+	color: var(--pico-contrast);
+	transform: scale(1.05);
+}
 
-	#nav-logo {
-		height: 2rem;
-		max-width: none;
-		padding-right: 1rem
-	}
+#nav-logo {
+	height: 2rem;
+	max-width: none;
+	padding-right: 1rem;
+}
 
-	[data-theme=light] #nav-logo {
-		content: url("../img/logo-vector-horizontal-light.png")
-	}
-	
-	[data-theme=dark] #nav-logo {
-		content: url("../img/logo-vector-horizontal-dark.png")
-	}
+[data-theme="light"] #nav-logo {
+	content: url("../img/logo-vector-horizontal-light.png");
+}
 
-	/* ----- Nav bar right secion. ----- */
-	.nav-right {
-		margin-left: 1em;
-		margin-top: -0.25rem
-	}
+[data-theme="dark"] #nav-logo {
+	content: url("../img/logo-vector-horizontal-dark.png");
+}
 
-	.nav-right img {
-		width: 1em;
-		transition: transform, opacity 0.6s ease-in-out 0s;
-		transition-duration: 0.2s !important
-	}
+/* ----- Nav bar right secion. ----- */
+.nav-right {
+	margin-left: 1em;
+}
 
+.nav-right img {
+	width: 1em;
+	height: 1em;
+  display: block;
+	transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	object-fit: contain; /* These PNGs are converted from SVGs and not all are perfect squares. */
+}
+
+/* Apply hover effects only when the device supports hover */
+@media (hover: hover) and (pointer: fine) {
 	.nav-right a:hover img {
 		transform: rotate(15deg) scale(1.5);
-		opacity: 0.7
+		opacity: 0.7;
 	}
+}
 
-	[data-theme=light] #nav-theme-img {
-		content: url("../img/theme-switcher/theme-icon-light.png")
-	}
-	
-	[data-theme=dark] #nav-theme-img {
-		content: url("../img/theme-switcher/theme-icon-dark.png");
-		max-height: 1em;
-		width: auto
-	}
-	
-	/********** FOOTER **********/
-	#blockquote {
-		padding-bottom: 0
-	}
+@media (hover: none) and (pointer: coarse) {
+  .nav-right a:active img {
+    transform: rotate(10deg) scale(1.2);
+    opacity: 0.8;
+  }
+}
 
-	footer {
-		padding-top: 0
-	}
+[data-theme="light"] #nav-theme-img {
+	content: url("../img/theme-switcher/theme-icon-light.png");
+}
+
+[data-theme="dark"] #nav-theme-img {
+	content: url("../img/theme-switcher/theme-icon-dark.png");
+}
+
+/********** FOOTER **********/
+#blockquote {
+	padding-bottom: 0;
+}
+
+#site-footer {
+	padding-top: 0;
+}
+
+#site-footer p {
+	font-size: 0.7rem;
+	opacity: 0.7;
+}

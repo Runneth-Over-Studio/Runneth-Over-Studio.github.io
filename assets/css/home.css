@@ -7,12 +7,12 @@
 
 section {
 	padding-top: 2.5rem;
-	padding-bottom: 2.5rem
+	padding-bottom: 2.5rem;
 }
 
 .standard-section {
     padding-top: 3rem;
-    padding-bottom: 3rem
+    padding-bottom: 3rem;
 }
 
 .standard-section .grid {
@@ -21,7 +21,7 @@ section {
     @media (max-width: 1024px) {
         .standard-section .grid {
             grid-template-columns: auto;
-            grid-template-rows: auto auto
+            grid-template-rows: auto auto;
         }
     }
 
@@ -30,27 +30,25 @@ section {
     padding-bottom: 2.5rem;
     position: relative;
     clip-path: polygon(
-    /* TOP edge – jagged, sloping DOWN to the right */
-    0%   0%, 8%   1.8%, 16%  0.8%, 25%  2.5%, 33%  1.2%, 42%  3.4%, 50%  2.1%, 58%  4.6%, 66%  3.0%, 75%  5.1%, 83%  4.0%, 91%  6.2%, 100% 6.0%,
-    /* BOTTOM edge – jagged, sloping UP to the right */
-    100% 93%, 91%  95.5%, 83%  94.0%, 75%  97.0%, 66%  95.0%, 58%  98.2%, 50%  96.4%, 42%  98.8%, 33%  97.2%, 25%  99.4%, 16%  98.0%, 8%   100%, 0%   100%
-    );
+        /* TOP edge – jagged, sloping DOWN to the right */
+        0%   0%, 8%   1.8%, 16%  0.8%, 25%  2.5%, 33%  1.2%, 42%  3.4%, 50%  2.1%, 58%  4.6%, 66%  3.0%, 75%  5.1%, 83%  4.0%, 91%  6.2%, 100% 6.0%,
+        /* BOTTOM edge – jagged, sloping UP to the right */
+        100% 93%, 91%  95.5%, 83%  94.0%, 75%  97.0%, 66%  95.0%, 58%  98.2%, 50%  96.4%, 42%  98.8%, 33%  97.2%, 25%  99.4%, 16%  98.0%, 8%   100%, 0%   100%);
     background: linear-gradient(
         to bottom,
         var(--pico-dropdown-hover-background-color) 0%,
-        color-mix(in srgb, var(--pico-dropdown-hover-background-color), black 15%) 100%
-    )
+        color-mix(in srgb, var(--pico-dropdown-hover-background-color), black 15%) 100%);
 }
 
 .section-left h6 {
 	color: rgba(var(--pico-color), 0.5);
-	font-size:small
+	font-size:small;
 }
 
 .section-left p {
 	font-size: 0.8rem;
 	font-weight: lighter;
-	color: rgba(var(--pico-color), 0.5)
+	color: rgba(var(--pico-color), 0.5);
 }
 
 .section-left p:before {
@@ -60,21 +58,21 @@ section {
     width: 30px;
     height: 5px;
     margin-top: 1.25rem;
-	margin-bottom: 1.25rem
+	margin-bottom: 1.25rem;
 }
 
 .section-right p {
-	font-size: 0.9rem
+	font-size: 0.9rem;
 }
 
 article > header :is(h1, h2, h3, h4, h5, h6) {
-    margin-bottom: 0
+    margin-bottom: 0;
 }
 
 
 /********** ABOUT SCTION **********/
 #about-grid {
-	grid-template-columns: 2.2fr 0.8fr
+	grid-template-columns: 2.2fr 0.8fr;
 }
 
 /********** TOOLS SCTION **********/
@@ -82,7 +80,7 @@ article > header :is(h1, h2, h3, h4, h5, h6) {
 	grid-template-columns: auto auto auto;
 	grid-template-rows: auto auto;
 	grid-row-gap: 0;
-	grid-column-gap: 0
+	grid-column-gap: 0;
 }
     @media (max-width: 1024px) {
         #tools-grid {
@@ -97,16 +95,16 @@ article > header :is(h1, h2, h3, h4, h5, h6) {
     position: relative;
     text-transform: uppercase;
     font-weight: bold;
-    color: #fff
+    color: #fff;
 }
 
 #tools-grid img {
     display: inline-block;
-    padding: 15px 25px
+    padding: 15px 25px;
 }
 
 #tools-grid a:hover .tool-overlay {
-    opacity: 1
+    opacity: 1;
 }
 
 .tool-overlay {
@@ -121,7 +119,7 @@ article > header :is(h1, h2, h3, h4, h5, h6) {
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out
+    transition: all 0.3s ease-out;
 }
 
 .tool-overlay span {
@@ -130,5 +128,5 @@ article > header :is(h1, h2, h3, h4, h5, h6) {
     left: 0;
     width: 100%;
     text-align: center;
-    display: inline-block
+    display: inline-block;
 }

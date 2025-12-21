@@ -2,10 +2,10 @@
 
 <html lang="en" data-theme="dark">
 	<head>
+    <title>Privacy Policy | Runneth Over Studio</title>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Privacy Policy | Runneth Over Studio</title>
 		<meta name="description" content="Privacy policy of Runneth Over Studio, LLC. No tracking, no telemetry, and no analytics.">
 		<meta name="keywords" content="privacy, policy,indie, software, game, developer">
 
@@ -24,22 +24,11 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
 		<link rel="stylesheet" href="../assets/css/color-scheme.css">
 		<link rel="stylesheet" href="../assets/css/main.css">
-
-    <style>
-      /* Pico-friendly tweaks */
-      main.container { max-width: 900px; }
-      #content :is(h1,h2,h3) { margin-top: 1.75rem; }
-      #content hr { margin: 2rem 0; }
-      #status { margin-top: 1rem; }
-      .muted { opacity: 0.75; }
-      /* Make rendered markdown look good under Pico */
-      #content pre { padding: 1rem; overflow: auto; }
-    </style>
-
+    <link rel="stylesheet" href="../assets/css/privacy.css">
 	</head>
 
 	<body>
-		<nav class="container-fluid">
+		<nav id="site-nav" class="container-fluid">
 			<div class="nav-left">
 				<a href="https://runnethoverstudio.com"><img id="nav-logo" alt="Site Logo" src="../assets/img/logo-vector-horizontal-light.png"></a>
 			</div>
@@ -52,23 +41,23 @@
 		</nav>
 
 		<main class="container">
-    <hgroup>
-      <h1>Privacy Policy</h1>
-      <p class="muted">Runneth Over Studio, LLC</p>
-    </hgroup>
+      <hgroup>
+        <h1>Privacy Policy</h1>
+        <p class="muted">Runneth Over Studio, LLC</p>
+      </hgroup>
 
-    <article>
-      <div id="status" class="muted">Loading privacy policy…</div>
-      <div id="content"></div>
+      <article>
+        <div id="status" class="muted">Loading privacy policy…</div>
+        <div id="content"></div>
 
-      <footer class="muted" style="margin-top: 1rem;">
-        <small>
-          Trouble viewing this page? View the raw policy:
-          <a href="../assets/docs/privacy.md">privacy.md</a>
-        </small>
-      </footer>
-    </article>
-  </main>
+        <footer class="muted" style="margin-top: 1rem;">
+          <small>
+            Trouble viewing this page? View the raw policy:
+            <a href="../assets/docs/privacy.md">privacy.md</a>
+          </small>
+        </footer>
+      </article>
+    </main>
 
     <noscript>
       <main class="container">
@@ -79,76 +68,75 @@
       </main>
     </noscript>
 
-    <footer class="container">
+    <footer id="site-footer" class="container">
 			<hr>
 			<p>&copy; <script>document.write(new Date().getFullYear());</script> Runneth Over Studio, LLC</p>
 		</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js" crossorigin="anonymous"></script>
 
-  <script>
-    async function renderPrivacyPolicy() {
-      const statusEl = document.getElementById("status");
-      const contentEl = document.getElementById("content");
+    <script>
+      async function renderPrivacyPolicy() {
+        const statusEl = document.getElementById("status");
+        const contentEl = document.getElementById("content");
 
-      // If scripts failed to load, show a clear message.
-      if (typeof marked === "undefined" || typeof DOMPurify === "undefined") {
-        statusEl.innerHTML =
-          `<strong>Renderer failed to load.</strong> ` +
-          `Try opening the raw Markdown: <a href="../assets/docs/privacy.md">privacy.md</a>`;
-        return;
-      }
-
-      // Basic Marked config
-      marked.setOptions({
-        gfm: true,
-        breaks: false,
-        headerIds: true,
-        mangle: false
-      });
-
-      try {
-        // If privacy.md is in /pages, this path is correct:
-        const response = await fetch("../assets/docs/privacy.md", { cache: "no-store" });
-        if (!response.ok) {
-          throw new Error(`Failed to load privacy.md (${response.status} ${response.statusText})`);
+        // If scripts failed to load, show a clear message.
+        if (typeof marked === "undefined" || typeof DOMPurify === "undefined") {
+          statusEl.innerHTML =
+            `<strong>Renderer failed to load.</strong> ` +
+            `Try opening the raw Markdown: <a href="../assets/docs/privacy.md">privacy.md</a>`;
+          return;
         }
 
-        const markdown = await response.text();
-
-        // Convert Markdown -> HTML
-        const rawHtml = marked.parse(markdown);
-
-        // Sanitize
-        const cleanHtml = DOMPurify.sanitize(rawHtml, {
-          USE_PROFILES: { html: true }
+        // Basic Marked config
+        marked.setOptions({
+          gfm: true,
+          breaks: false,
+          headerIds: true,
+          mangle: false
         });
 
-        contentEl.innerHTML = cleanHtml;
-        statusEl.textContent = ""; // clear loading text
-
-        // External links: open in new tab
-        contentEl.querySelectorAll("a[href]").forEach(a => {
-          const href = a.getAttribute("href") || "";
-          const isExternal = href.startsWith("http://") || href.startsWith("https://");
-          if (isExternal) {
-            a.target = "_blank";
-            a.rel = "noopener noreferrer";
+        try {
+          const response = await fetch("../assets/docs/privacy.md", { cache: "no-store" });
+          if (!response.ok) {
+            throw new Error(`Failed to load privacy.md (${response.status} ${response.statusText})`);
           }
-        });
-      }
-      catch (err) {
-        statusEl.innerHTML =
-          `<strong>Could not load the Privacy Policy.</strong> ` +
-          `<span class="muted">${String(err)}</span>`;
-        contentEl.innerHTML =
-          `<p>Open the raw Markdown directly: <a href="../assets/docs/privacy.md">privacy.md</a></p>`;
-      }
-    }
 
-    renderPrivacyPolicy();
-  </script>
+          const markdown = await response.text();
+
+          // Convert Markdown -> HTML
+          const rawHtml = marked.parse(markdown);
+
+          // Sanitize
+          const cleanHtml = DOMPurify.sanitize(rawHtml, {
+            USE_PROFILES: { html: true }
+          });
+
+          contentEl.innerHTML = cleanHtml;
+          statusEl.textContent = ""; // clear loading text
+
+          // External links: open in new tab
+          contentEl.querySelectorAll("a[href]").forEach(a => {
+            const href = a.getAttribute("href") || "";
+            const isExternal = href.startsWith("http://") || href.startsWith("https://");
+            if (isExternal) {
+              a.target = "_blank";
+              a.rel = "noopener noreferrer";
+            }
+          });
+        }
+        catch (err) {
+          statusEl.innerHTML =
+            `<strong>Could not load the Privacy Policy.</strong> ` +
+            `<span class="muted">${String(err)}</span>`;
+          contentEl.innerHTML =
+            `<p>Open the raw Markdown directly: <a href="../assets/docs/privacy.md">privacy.md</a></p>`;
+        }
+      }
+
+      renderPrivacyPolicy();
+    </script>
 
 	</body>
 </html>
