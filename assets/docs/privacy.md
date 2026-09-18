@@ -1,5 +1,5 @@
 # Privacy Policy
-**Last Updated:** 19 Febuary 2024
+**Last Updated:** 19 February 2024
 **Runneth Over Studio, LLC**
 
 Runneth Over Studio, LLC (“we,” “our,” or “us”) is committed to protecting your privacy. This Privacy Policy describes how we handle personal information across all websites, software, games, applications, and services developed or published by Runneth Over Studio, LLC (collectively, the “Services”).
