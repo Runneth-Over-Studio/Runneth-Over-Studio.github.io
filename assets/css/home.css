@@ -41,14 +41,12 @@ section {
 }
 
 .section-left h6 {
-	color: rgba(var(--pico-color), 0.5);
 	font-size:small;
 }
 
 .section-left p {
 	font-size: 0.8rem;
 	font-weight: lighter;
-	color: rgba(var(--pico-color), 0.5);
 }
 
 .section-left p:before {
@@ -70,63 +68,113 @@ article > header :is(h1, h2, h3, h4, h5, h6) {
 }
 
 
-/********** ABOUT SCTION **********/
-#about-grid {
-	grid-template-columns: 2.2fr 0.8fr;
+/********** PROJECTS SECTION **********/
+#engine-card > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
-/********** TOOLS SCTION **********/
-#tools-grid {
-	grid-template-columns: auto auto auto;
-	grid-template-rows: auto auto;
-	grid-row-gap: 0;
-	grid-column-gap: 0;
+.status-badge {
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.15rem 0.6rem;
+    border-radius: 1rem;
+    color: var(--pallet-dark-color);
+    background: var(--pallet-accent-2-color);
 }
-    @media (max-width: 1024px) {
-        #tools-grid {
-            grid-template-columns: auto auto;
-            grid-template-rows: auto auto auto
+
+#engine-card h6 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#engine-card progress {
+    margin-bottom: 0.25rem;
+}
+
+#engine-card progress::-webkit-progress-value {
+    background-color: var(--pallet-accent-1-color);
+}
+
+#engine-card progress::-moz-progress-bar {
+    background-color: var(--pallet-accent-1-color);
+}
+
+#engine-card .progress-caption {
+    font-size: 0.8rem;
+}
+
+#engine-card .muted {
+    opacity: 0.7;
+}
+
+#engine-card li {
+    font-size: 0.9rem;
+}
+
+.feature-list {
+    columns: 2;
+    column-gap: 2rem;
+}
+    @media (max-width: 576px) {
+        .feature-list {
+            columns: 1;
         }
     }
 
-#tools-grid a {
-    display: block;
-    text-align: center;
-    position: relative;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #fff;
+/********** ABOUT SECTION **********/
+#about-grid {
+    grid-template-columns: 2.2fr 0.8fr;
 }
+
+.about-signoff {
+    font-style: italic;
+}
+
+/********** TOOLS STRIP **********/
+/* Intentionally low-key: one row of small, muted tiles that come to full color on hover. */
+#tools {
+    padding-top: 0;
+    text-align: center;
+}
+
+.tools-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+    margin-bottom: 0.75rem;
+}
+
+#tools-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.75rem;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+    @media (max-width: 576px) {
+        #tools-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
 
 #tools-grid img {
-    display: inline-block;
-    padding: 15px 25px;
+    display: block;
+    filter: grayscale(1);
+    opacity: 0.6;
+    transition: filter 0.3s ease-out, opacity 0.3s ease-out;
 }
 
-#tools-grid a:hover .tool-overlay {
+#tools-grid a:hover img,
+#tools-grid a:focus-visible img {
+    filter: none;
     opacity: 1;
-}
-
-.tool-overlay {
-    background: rgba(0, 0, 0, 0.8);
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-}
-
-.tool-overlay span {
-    position: absolute;
-    top: 48%;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    display: inline-block;
 }
